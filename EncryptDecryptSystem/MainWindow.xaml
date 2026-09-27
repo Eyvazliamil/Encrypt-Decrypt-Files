@@ -1,0 +1,115 @@
+﻿<Window x:Class="EncryptDecryptSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EncryptDecryptSystem"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="300"
+        Width="650"
+        MinHeight="250"
+        MinWidth="500">
+
+    <Grid Background="#FFF9F9F9"
+          Margin="15">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+ 
+        <Button x:Name="Filebtn" Grid.Row="0"
+                Grid.Column="0"
+                Content="File ..."
+                Height="27"
+                Width="81"
+                FontWeight="Bold"
+                HorizontalAlignment="Left"
+                Margin="0,0,10,10" Click="Filebtn_Click"/>
+ 
+        <TextBox x:Name="txtbox1" Grid.Row="0"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="3"
+                 TextWrapping="Wrap"
+                 Height="25"
+                 VerticalContentAlignment="Center"
+                 Margin="0,0,0,10" TextChanged="txtbox1_TextChanged"/>
+
+ 
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Content="Password"
+               FontWeight="Bold"
+               FontSize="16"
+               VerticalAlignment="Center"
+               Margin="0,0,10,10"/>
+
+        <TextBox x:Name="txtbox2" Grid.Row="1"
+                 Grid.Column="1"
+                 TextWrapping="Wrap"
+                 Height="25"
+                 VerticalContentAlignment="Center"
+                 Margin="0,0,10,10" TextChanged="txtbox2_TextChanged"/>
+ 
+        <RadioButton x:Name="Radioencrypt" Grid.Row="1"
+                     Grid.Column="2"
+                     Content="Encrypt"
+                     FontWeight="Bold"
+                     VerticalAlignment="Center"
+                     Margin="5,0,10,10" Checked="Radioencrypt_Checked"/>
+
+        <RadioButton x:Name="Radiodecrypt" Grid.Row="1"
+                     Grid.Column="3"
+                     Content="Decrypt"
+                     FontWeight="Bold"
+                     VerticalAlignment="Center"
+                     Margin="5,0,0,10" Checked="Radiodecrypt_Checked"/>
+
+ 
+        <ProgressBar x:Name="Progressbar" Grid.Row="3"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="4"
+                     Height="37"
+                     VerticalAlignment="Center"
+                     Margin="0,10" ValueChanged="Progressbar_ValueChanged"/>
+
+ 
+        <Grid Grid.Row="4"
+              Grid.Column="0"
+              Grid.ColumnSpan="4"
+              Margin="0,10,0,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Startbtn" Grid.Column="1"
+                    Content="Start"
+                    Height="33"
+                    Width="118"
+                    FontWeight="Bold"
+                    Margin="0,0,15,0" Click="Startbtn_Click"/>
+
+            <Button x:Name="Cancelbtn" Grid.Column="2"
+                    Content="Cancel"
+                    Height="33"
+                    Width="118"
+                    FontWeight="Bold" Click="Cancelbtn_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>
